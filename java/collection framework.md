@@ -59,3 +59,66 @@
     1)	It returns immutable collection copy of the collection we pass to the method.
     It used to make a collection read only.
 
+11. What is the importance of hashCode() and equals() methods?
+    HashMap uses Key object hashCode() and equals() method to determine the index to put the key-value pair.
+    These methods are also used when we try to get value from HashMap. If these methods are not implemented correctly,
+    two different Key’s might produce same hashCode() and equals() output and in that case rather than storing it at
+    different location, HashMap will consider them same and overwrite them.
+
+12. The implementation of equals() and hashCode() should follow these rules.
+
+    If o1.equals(o2), then o1.hashCode() == o2.hashCode()should always be true.
+    If o1.hashCode() == o2.hashCode is true, it doesn’t mean that o1.equals(o2) will be true.
+
+13. Internal Working of HashMap in Java
+
+    HashMap contains an array of Node and Node can represent a class having following objects :
+    int hash
+    K key
+    V value
+    Node next
+
+    How hashing works:
+        For insertion of a key(K) – value(V) pair into a hash map, 2 steps are required:
+
+        1)K is converted into a small integer (called its hash code) using a hash function.
+        2)The hash code is used to find an index (hashCode % arrSize) and the entire linked list at that index(Separate chaining) is first searched for the presence of the K already.
+        3)If found, it’s value is updated and if not, the K-V pair is stored as a new node in the list.
+        -HashMap allows null key, so hash code of null will always be index 0th.
+        -In case of collision, when there is an item exist in the calculated index, check via hashCode() and equals() method,
+         to check both keys or same, if true, override the value, otherwise connect this new node to the previous node object.
+
+    *HashMap Changes in Java 8
+    As we know now that in case of hash collision entry objects are stored as a node in a linked-list and equals() method is used to compare keys.
+    That comparison to find the correct key with in a linked-list is a linear operation so in a worst case scenario the complexity becomes O(n).
+    To address this issue, Java 8 hash elements use balanced trees instead of linked lists after a certain threshold is reached.
+    Which means HashMap starts with storing Entry objects in linked list but after the number of items in a hash becomes larger than a certain threshold,
+    the hash will change from using a linked list to a balanced tree, which will improve the worst case performance from O(n) to O(log n).
+
+
+HashMap has two parameters that affect its performance:
+    1)initial capacity and
+    2)load factor.
+      The capacity is the number of buckets in the hash table, and the initial
+      capacity is simply the capacity at the time the hash table is created.
+
+      The load factor is a measure of how full the hash table is allowed to
+      get before its capacity is automatically increased.
+
+      When the number of entries in the hash table exceeds the product of the load factor and the
+      current capacity, the hash table is rehashed (that is, internal data
+      structures are rebuilt) so that the hash table has approximately twice the
+      number of buckets.
+
+Load factor (to calculate LF, size/number of buckets )
+     if there are n entries and b is the size of the array there would be n/b entries on each index.
+     This value n/b is called the load factor that represents the load that is there on our map.
+     This Load Factor needs to be kept low, so that number of entries at one index is less and so is the complexity almost constant, i.e., O(1).
+     default initial capacity 16 and the default load factor (0.75).
+
+Rehashing can be done as follows:
+    For each addition of a new entry to the map, check the load factor.
+    If it’s greater than its pre-defined value (or default value of 0.75 if not given), then Rehash.
+    For Rehash, make a new array of double the previous size and make it the new bucket array.
+    Then traverse to each element in the old bucketArray and call the insert() for each so as to insert it into the new larger bucket array.
+
