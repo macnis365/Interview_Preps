@@ -122,3 +122,21 @@ Rehashing can be done as follows:
     For Rehash, make a new array of double the previous size and make it the new bucket array.
     Then traverse to each element in the old bucketArray and call the insert() for each so as to insert it into the new larger bucket array.
 
+What is difference between HashMap and Hashtable?
+    HashMap allows null key and values whereas Hashtable doesn’t allow null key and values.
+    Hashtable is synchronized but HashMap is not synchronized. So HashMap is better for single threaded environment, Hashtable is suitable for multi-threaded environment.
+    HashMap provides Set of keys to iterate and hence it’s fail-fast but Hashtable provides Enumeration of keys that doesn’t support this feature.
+    Hashtable is considered to be legacy class and if you are looking for modifications of Map while iterating, you should use ConcurrentHashMap.
+
+How to decide between HashMap and TreeMap?
+    For inserting, deleting, and locating elements in a Map, the HashMap offers the best alternative. If, however, you need to traverse the keys in a sorted order, then TreeMap is your better alternative.
+
+What is difference between Comparable and Comparator interface?
+    Comparable and Comparator interfaces are used to sort collection or array of objects.
+    Comparable compareTo(Object o) method implementation can sort based on one field only.
+    Comparator interface compare(Object o1, Object o2) method need to be implemented that takes two Object argument
+
+    Comparable interface is used to provide the natural sorting of objects and we can use it to provide sorting based on single logic.
+    Comparator interface is used to provide different algorithms for sorting and we can chose the comparator we want to use to sort the given collection of objects.
+
+
