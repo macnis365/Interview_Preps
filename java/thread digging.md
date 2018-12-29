@@ -122,3 +122,21 @@
         ReentrantLock allow threads to enter into lock on a resource more than once. When the thread first enters into lock, a hold count is set to one. Before unlocking the thread can re-enter into lock again and every time hold count is incremented by one. For every unlock request, hold count is decremented by one and when hold count is 0, the resource is unlocked.
 
         Reentrant Locks also offer a fairness parameter, by which the lock would abide by the order of the lock request i.e. after a thread unlocks the resource, the lock would go to the thread which has been waiting for the longest time. This fairness mode is set up by passing true to the constructor of the lock.
+
+20. ExecutorService
+
+         The Java ExecutorService is a construct that allows you to pass a task to be executed by a thread asynchronously.
+         The executor service creates and maintains a reusable pool of threads for executing submitted tasks.
+         The service also manages a queue, which is used when there are more tasks than the number of threads in the pool and there is a need to queue up tasks until there is a free thread available to execute the task.
+
+          When you instantiate your Executor Service, a few parameters are initialized
+
+          The core pool size is the minimum number of threads that should be kept in the pool.
+
+          The max pool size is the maximum number of workers that can be in the pool. when work queue is full, a new worker is added until the max pool size is reached. If the max pool size has already been reached and the work queue is full, then the next task will be rejected.
+
+          The work queue is used to queue up tasks for the available worker threads.
+
+          keepAliveTime - If the current number of worker threads exceeds the core pool size and a keepAliveTime is set, then worker threads are shut down when there is no more work to do until the number of worker threads is back to the core pool size
+
+          newFixedThreadPool()` for when you just need a fixed number of threads that execute tasks, `newCachedThreadPool()` for when you want to create new threads as needed and shrink the pool when not needed,
