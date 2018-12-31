@@ -132,7 +132,7 @@
           When you instantiate your Executor Service, a few parameters are initialized
 
           The core pool size is the minimum number of threads that should be kept in the pool.
-
+            11
           The max pool size is the maximum number of workers that can be in the pool. when work queue is full, a new worker is added until the max pool size is reached. If the max pool size has already been reached and the work queue is full, then the next task will be rejected.
 
           The work queue is used to queue up tasks for the available worker threads.
