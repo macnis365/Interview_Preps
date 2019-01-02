@@ -18,29 +18,29 @@
 
 4.	Iterator over Enumeration interface
 
-        1)	An iterator over a collection. Iterator takes the place of Enumeration in the Java collections framework.
+        1)An iterator over a collection. Iterator takes the place of Enumeration in the Java collections framework.
             Iterators differ from enumerations in two ways:
-        2)	Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
-        3)	Method names have been improved in iterator.(hasnext(), next(), remove())
-        4)	Method names in Enumeration (hasMoreElements(),nextElement())
-        5)	Iterators are fail-fast . i.e. when one thread changes the collection by add / remove operations , while another thread is traversing it through an Iterator using hasNext() or next() method, the iterator fails quickly by throwing ConcurrentModificationException
+        2)Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
+        3)Method names have been improved in iterator.(hasnext(), next(), remove())
+        4)Method names in Enumeration (hasMoreElements(),nextElement())
+        5)Iterators are fail-fast . i.e. when one thread changes the collection by add / remove operations , while another thread is traversing it through an Iterator using hasNext() or next() method, the iterator fails quickly by throwing ConcurrentModificationException
 
 5.	Iterable interface
 
-        1)	Implementing this interface allows an object to be the target of the "for-each loop" statement.
-        2)	all subtypes of Collection also implement the Iterable interface.
-        3)	The Iterable interface has only one method:
+        1)Implementing this interface allows an object to be the target of the "for-each loop" statement.
+        2)all subtypes of Collection also implement the Iterable interface.
+        3)The Iterable interface has only one method:
         public interface Iterable<T> {
           public Iterator<T> iterator();
         }
 
 6.	Fail Fast ?
 
-        1)	When a problem occurs, a fail-fast system fails immediately.
+        1)When a problem occurs, a fail-fast system fails immediately.
         In Java, we can find this behavior with iterators. Incase, you have called iterator on a collection object, and another thread tries to modify the collection object, then concurrent modification exception will be thrown. This is called fail-fast.
 
 7.	How to remove an item from collection while iterating
-        1)	Iterator.remove()
+        1)Iterator.remove()
 
         Iterator<Integer> it = nums.iterator();
         while (it.hasNext()) {
@@ -53,7 +53,7 @@
 
 8.	Can Tree based collections have null ?
 
-        1)	No, if the specified element is null and this set uses natural ordering,
+        1)No, if the specified element is null and this set uses natural ordering,
             or its comparator does not permit null elements, it must give compare(ob1, ob2) and need to handle null here, inorder to allow null values, whereas ob1.compareTo(ob2) cannot handle because obj1 == null, throws NullPointerException
 
 9.	What is the use of Collections.emptyList()?
