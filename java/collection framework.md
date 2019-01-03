@@ -154,4 +154,14 @@ What is difference between Comparable and Comparator interface?
     Comparable interface is used to provide the natural sorting of objects and we can use it to provide sorting based on single logic.
     Comparator interface is used to provide different algorithms for sorting and we can chose the comparator we want to use to sort the given collection of objects.
 
+Internal Working of Hashmap and its optimization Java8 onwards
+
+        MIN_TREEIFY_CAPACITY is the minimum number of buckets before a certain bucket is transformed into a Tree.
+
+        UNTREEIFY_THRESHOLD comes into play after re-hashing. At that point, some entries might move from this bins to others 
+        and it might reach this UNTREEIFY_THRESHOLD. At this point it does not pay off to keep the bin as red-black tree node, 
+        but as a LinkedList instead.
+
+        TREEIFY_THRESHOLD -> when a single bucket reaches this (and the total number exceeds MIN_TREEIFY_CAPACITY), 
+        it is transformed into a perfectly balanced red/black tree node. Why? Because of search speed.
 
