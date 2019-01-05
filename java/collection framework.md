@@ -18,29 +18,29 @@
 
 4.	Iterator over Enumeration interface
 
-        1)	An iterator over a collection. Iterator takes the place of Enumeration in the Java collections framework.
+        1)An iterator over a collection. Iterator takes the place of Enumeration in the Java collections framework.
             Iterators differ from enumerations in two ways:
-        2)	Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
-        3)	Method names have been improved in iterator.(hasnext(), next(), remove())
-        4)	Method names in Enumeration (hasMoreElements(),nextElement())
-        5)	Iterators are fail-fast . i.e. when one thread changes the collection by add / remove operations , while another thread is traversing it through an Iterator using hasNext() or next() method, the iterator fails quickly by throwing ConcurrentModificationException
+        2)Iterators allow the caller to remove elements from the underlying collection during the iteration with well-defined semantics.
+        3)Method names have been improved in iterator.(hasnext(), next(), remove())
+        4)Method names in Enumeration (hasMoreElements(),nextElement())
+        5)Iterators are fail-fast . i.e. when one thread changes the collection by add / remove operations , while another thread is traversing it through an Iterator using hasNext() or next() method, the iterator fails quickly by throwing ConcurrentModificationException
 
 5.	Iterable interface
 
-        1)	Implementing this interface allows an object to be the target of the "for-each loop" statement.
-        2)	all subtypes of Collection also implement the Iterable interface.
-        3)	The Iterable interface has only one method:
+        1)Implementing this interface allows an object to be the target of the "for-each loop" statement.
+        2)all subtypes of Collection also implement the Iterable interface.
+        3)The Iterable interface has only one method:
         public interface Iterable<T> {
           public Iterator<T> iterator();
         }
 
 6.	Fail Fast ?
 
-        1)	When a problem occurs, a fail-fast system fails immediately.
+        1)When a problem occurs, a fail-fast system fails immediately.
         In Java, we can find this behavior with iterators. Incase, you have called iterator on a collection object, and another thread tries to modify the collection object, then concurrent modification exception will be thrown. This is called fail-fast.
 
 7.	How to remove an item from collection while iterating
-        1)	Iterator.remove()
+        1)Iterator.remove()
 
         Iterator<Integer> it = nums.iterator();
         while (it.hasNext()) {
@@ -53,7 +53,7 @@
 
 8.	Can Tree based collections have null ?
 
-        1)	No, if the specified element is null and this set uses natural ordering,
+        1)No, if the specified element is null and this set uses natural ordering,
             or its comparator does not permit null elements, it must give compare(ob1, ob2) and need to handle null here, inorder to allow null values, whereas ob1.compareTo(ob2) cannot handle because obj1 == null, throws NullPointerException
 
 9.	What is the use of Collections.emptyList()?
@@ -154,4 +154,69 @@ What is difference between Comparable and Comparator interface?
     Comparable interface is used to provide the natural sorting of objects and we can use it to provide sorting based on single logic.
     Comparator interface is used to provide different algorithms for sorting and we can chose the comparator we want to use to sort the given collection of objects.
 
+Internal Working of Hashmap and its optimization Java8 onwards
 
+        MIN_TREEIFY_CAPACITY is the minimum number of buckets before a certain bucket is transformed into a Tree.
+
+        UNTREEIFY_THRESHOLD comes into play after re-hashing. At that point, some entries might move from this bins to others 
+        and it might reach this UNTREEIFY_THRESHOLD. At this point it does not pay off to keep the bin as red-black tree node, 
+        but as a LinkedList instead.
+
+        TREEIFY_THRESHOLD -> when a single bucket reaches this (and the total number exceeds MIN_TREEIFY_CAPACITY), 
+        it is transformed into a perfectly balanced red/black tree node. Why? Because of search speed.
+
+What is a Tree Map ?
+
+        Treemap class is like HashMap which stores key- value pairs . The major difference is that Treemap  sorts
+        the key in ascending order. according to the natural ordering of its keys, or by a Comparator provided at map creation time,    depending on which constructor is used.
+
+How TreeMap works in java ?
+
+        TreeMap is a Red-Black tree based NavigableMap implementation.In other words , it sorts the TreeMap object keys using Red-Black tree algorithm.
+
+What is the runtime performance of the get() method in TreeMap and HashMap  ,where n represents the number of elements ?
+
+        TreeMap implementation provides guaranteed log(n) time cost for the containsKey,get,put and remove operations.
+        TreeMap : log(n)   
+        HashMap : Constant time performance assuming elements disperses properly
+        
+How Set Ensures Uniqueness
+
+	what happens internally when you pass duplicate elements in the  add() method of the Set object , It will return false and do not add to the HashSet , as the element is already present .So far so good .
+
+But the main problem arises that how it returns false . So here is the answer
+
+	So , we are achieving uniqueness in Set,internally in java  through HashMap . Whenever you create an object of HashSet it will create an object of HashMap as you can see in the italic lines in the above code .
+
+	As we know in HashMap each key is unique . So what we do in the set is that we pass the argument in the add(Elemene E) that is E as a key in the HashMap . Now we need to associate some value to the key , so what Java apis developer did is to pass the Dummy  value that is ( new Object () ) which is referred by Object reference PRESENT .
+
+	So , actually when you are adding a line in HashSet like  hashset.add(3)   what java does internally is that it will put that element E as a key in the HashMap(created during HashSet object creation) and some dummy value that is Object's object is passed as a value to the key .
+
+	The main point to notice in above code is that put (key,value) will return
+
+	1.  null , if key is unique and added to the map
+	2.  Old Value of the key , if key is duplicate
+
+	public boolean add(E e) {
+		return map.put(e, PRESENT)==null;
+	}
+
+	So , if map.put(key,value) returns null ,then
+	map.put(e, PRESENT)==null will return true and element is added to the HashSet.
+
+	So , if map.put(key,value) returns old value of the key ,then
+	map.put(e, PRESENT)==null  will return false and element is  not added to the HashSet .
+
+Equals and Hashcode contract
+
+	From the hashCode() docs:
+	If two objects are equal according to the equals(Object) method, then calling the hashCode method on each of the two objects must produce the same integer result.
+
+	and from equals:
+	Note that it is generally necessary to override the hashCode method whenever this method is overridden, so as to maintain the general contract for the hashCode method, which states that equal objects must have equal hash codes.
+
+Hashset Collison
+
+	Java Hash Maps/Sets Automatically handel Hash collisions, this is why it is important to override both the equals and the hashCode methods. As both of them are utilised by Sets to differentiate duplicate or unique entries.
+
+	It is also important to note that these hash collisions hava a performance impace since multiple objects are referenced by the same Hash.
