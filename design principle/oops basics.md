@@ -21,7 +21,7 @@ Inheritance: ( ex- family property)
 	1)	Encapsulation is used to protect the members of class using different access specifiers like default, public, private and protected.
     2)	Best example for encapsulation in Java POJO, where we have all the calss fields as private, and use getters(), setters() for accessing the fields.
 	
-Abstraction:
+Abstraction:(collection is a best example)
 	It basically deals with hiding the details and showing the essential things to the user
 	1)	Abstraction is used to give a way to access the complex hidden implementation.
     2)	Abstraction is achieved through interface.
