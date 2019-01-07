@@ -2,7 +2,7 @@
 
     1)Web service is a way of communication that allows interoperability between different applications on different platforms
 
-2.What is REST?
+2.What is REST?(REpresentational state transfer)
 
     1)In the REST architecture style, clients and servers exchange representations of resources by using a standardized interface and protocol. REST isn't protocol specific, but when people talk about REST they usually mean REST over HTTP.
 
