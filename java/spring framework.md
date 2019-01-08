@@ -198,3 +198,12 @@ What is Actuator in Spring Boot?
     Spring boot actuator is one of the important feature in spring boot framework. Spring boot actuator helps you to access the current state of the running application in production environment. There are several metrics that has to be checked and monitored in the production environment.
     Even some external applications may be using those services to trigger the alert message to concerned person. Actuator module exposes set of REST endpoints that can be directly accessed as a HTTP URL to check the status
 
+Following is the high level flow of how spring boot works.
+
+    From the run method, the main application context is kicked off which in turn searches for the classes annotated with @Configuration, initializes all the declared beans in those configuration classes, and based upon the scope of those beans, stores those beans in jvm, specifically in a space inside JVM which is known as IOC container. After creation of all the beans, automatically configures the dispatcher servlet and registers the default handler mappings, messageConverts and all other basic things.
+
+    major characteristics of Spring Boot: Autoconfiguration. The goal was to provide default implementations for all of those infrastructure components (and they should fit perfectly well for most of our cases) but we also wanted to have the option to overwrite some of them if needed.
+
+    Autoconfiguration is a feature that allows library developers to automatically configure beans in the Spring context based on different conditions of the application, such as the presence of certain classes in the classpath, the existence of a bean or the activation of some property.
+
+     The Autoconfiguration mechanism is guaranteed to occur after all the user-defined beans have been registered. This ensures the @Conditional checking is done when the whole user configuration is available and so, makes sure user defined beans takes precedence over the autoconfiguration ones. Actually, the use of conditional annotations is only recommended in Autoconfiguration classes to avoid these ordering pitfalls.
