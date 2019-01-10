@@ -167,3 +167,34 @@
         detachedCriteria.setProjection(projectionList);
 
     detachedCriteria.getExecutableCriteria(session).list();
+    
+Inheritance in Hibernate
+
+Background
+	
+	As we know Java is an object oriented language and hence it supports inheritance. In java inheritance, there can be IS-A or HAS-A relationship. But when we come to any relational model, it supports only HAS-A relationship. To overcome this mimmatch hibernate provides different inheritance strategy. There are basically 3 types of hibernate strategy as follows.
+
+	1. Single Table Strategy
+
+	2. Table Per Class Strategy
+
+	3. Joined Table Strategy
+
+	The parent entity Employee.java is being extended by 2 other entities PermanentEmployee.java and ContractEmployee.java
+
+Hibernate Single Table Strategy
+	
+	In case of single table strategy, there is a single table created per inheritance hierachy. For example, we have Employee class being extended by 2 others classes but when it comes to single table strategy a single table will be created representing all the classes per inheritance hieracy and this table will contain all the data related to either Employee or ContractEmployee or PermanentEmployee.
+
+	So, the question arises as if all the entries are made in a single table then how can we identify those rows from object perspective. For this, hbernate provides a Discriminator Type(DType) column which helps to differentiate between these records. 
+
+Hibernate Table Per Class Strategy
+	
+	In case of table per class strategy, there are no. of tables created equivalent to exact no. of concrete entites defined in the inheritance hierachy.
+
+Hibernate Joined Table Strategy
+
+	In this strategy, all the entries in the DB will be created in one table that is corresponding table of parent entity and the tables corresponding to the child entities will have reference to it.
+
+for more 
+https://www.devglan.com/hibernate/hibernate-inheritance-example
