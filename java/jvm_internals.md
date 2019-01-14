@@ -1,5 +1,11 @@
 What is the difference between JVM, JRE and JDK?
 
+    The Java Runtime Environment contains core classes and supporting files; it also contains Java Virtual Machine (JVM).
+
+    JVM provides a runtime environment for executing Java bytecode. It is an abstract machine that is platform-dependent and has three notions as a specification, a document that describes requirement of JVM implementation, implementation, a computer program that meets JVM requirements, and instance, an implementation that executes Java bytecode.
+
+    JIT is part of JVM that optimise byte code to machine specific language compilation by compiling similar byte codes at same time, hence reducing overall time taken for compilation of byte code to machine specific language.
+
     JVM, which stands for Java Virtual Machine, is a virtual machine that understands and runs java bytecodes.
     JVM understands bytecodes and can execute the .class Java files.There are specific implementations of the
     JVM for specific platforms - Windows, Linux etc. This is how Java programming language is platform independent
