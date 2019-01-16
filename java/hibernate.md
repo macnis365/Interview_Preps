@@ -31,6 +31,12 @@
 	3) save() it returns an identifier, and if an INSERT has to be executed to get the identifier (e.g. "identity" generator, not "sequence"), this INSERT happens immediately, no matter if you are inside or outside of a transaction. This is not good in a long-running conversation with an extended Session/persistence context.
 	4)persist() also guarantees that it will not execute an INSERT statement if it is called outside of transaction boundaries
 	5)It makes a transient instance persistent. However, it doesn't guarantee that the identifier value will be assigned to the persistent instance immediately, the assignment might happen at flush time
+	
+* load() vs get()
+
+	session.load(): It will always return a proxy object with the given identity value, even the identity value is not exists in database. However, when you try to initialize a proxy by retrieve it’s properties from database, it will hit the database with select statement. If no row is found, a ObjectNotFoundException will throw.
+
+	session.get(): It will always return null , if the identity value is not found in database.
 
 7.What is Cascade?
 
