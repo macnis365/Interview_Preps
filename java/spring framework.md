@@ -176,6 +176,21 @@
 
         1)The Spring container is able to resolve Setter-based circular dependencies but gives a runtime exception BeanCurrentlyInCreationException in case of Constructor-based circular dependencies.
 
+18.
+
+        @Component - This is a general-purpose stereotype annotation indicating that the class is a spring component.
+
+        @Repository - This is to indicate that the class defines a data repository.
+
+        @Controller - The @Controller annotation indicates that a particular class serves the role of a controller.
+
+        @Services hold business logic and call method in repository layer.
+
+        @Component used to auto-detect and auto-configure beans using classpath scanning. There’s an implicit one-to-one mapping between the annotated class and the bean (i.e. one bean per class).
+
+        @Bean is used to explicitly declare a single bean, rather than letting Spring do it automatically for us.
+
+        Another big difference is that @Component is a class level annotation where as @Bean is a method level annotation and ,by default, name of the method serves as the bean name.
 
 SpringBoot
 

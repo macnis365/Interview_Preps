@@ -1,5 +1,11 @@
 What is the difference between JVM, JRE and JDK?
 
+    The Java Runtime Environment contains core classes and supporting files; it also contains Java Virtual Machine (JVM).
+
+    JVM provides a runtime environment for executing Java bytecode. It is an abstract machine that is platform-dependent and has three notions as a specification, a document that describes requirement of JVM implementation, implementation, a computer program that meets JVM requirements, and instance, an implementation that executes Java bytecode.
+
+    JIT is part of JVM that optimise byte code to machine specific language compilation by compiling similar byte codes at same time, hence reducing overall time taken for compilation of byte code to machine specific language.
+
     JVM, which stands for Java Virtual Machine, is a virtual machine that understands and runs java bytecodes.
     JVM understands bytecodes and can execute the .class Java files.There are specific implementations of the
     JVM for specific platforms - Windows, Linux etc. This is how Java programming language is platform independent
@@ -125,3 +131,5 @@ Types of References in Java
     Soft References: In Soft reference, even if the object is free for garbage collection then also its not garbage collected, until JVM is in need of memory badly.The objects gets cleared from the memory when JVM runs out of memory.To create such references java.lang.ref.SoftReference class is used.
 
     Phantom References: The objects which are being referenced by phantom references are eligible for garbage collection. But, before removing them from the memory, JVM puts them in a queue called ‘reference queue’ . They are put in a reference queue after calling finalize() method on them.
+
+[!https://codeahoy.com/2017/08/06/basics-of-java-garbage-collection/]
