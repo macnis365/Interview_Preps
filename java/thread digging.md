@@ -59,7 +59,7 @@
 
         There is a method called holdsLock(object obj) on java.lang.Thread, it returns true if and only if the current thread holds the monitor lock on the specified object.
 
-13.	Diffrence between Synchronized Collections vs Concurrent Collections
+13.	Difference between Synchronized Collections vs Concurrent Collections
 
         1)Synchronize means : the resource(which is synchronized) can't be modified by multiple threads simultaneously. e.g MAP returned by Collections.synchronizedMap(Map) will be a synchronized map and can be modified by one thread at a time,
         2)Concurrent collections are exactly opposite it uses lock striping . They are called so because they allow multiple threads to concurrently access the same data. For example concurrent HashMap allows multiple threads to perform write operations in parallel as long as the writes are happening on different segments.
