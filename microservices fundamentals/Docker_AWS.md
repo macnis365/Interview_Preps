@@ -30,6 +30,8 @@ and packages and distribution capabilites
 Pro Deployement -  docker simplifies requirements of your underlying host infra. orchestrate the creation of your supporting infra, diverse and unique
 runtime environment captured in docker images
 
+Docker - Containers provide a standard way to package your application's code, configurations, and dependencies into a single object. Containers share an operating system installed on the server and run as resource-isolated processes, ensuring quick, reliable, and consistent deployments, regardless of environment. The AWS Cloud offers infrastructure resources optimized for running containers, as well as a set of orchestration services that make it easy for you to build and run containerized applications in production
+
 Automate - Docker images are cerated from specification called Dockerfile, which is used automate creation of docker image.
 
 Docker compose - multi container envi, which creates and destoried container by single command
