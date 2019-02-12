@@ -1,3 +1,11 @@
+Breif intro to functional prog
+
+Functional programming is a programming paradigm in which we try to bind everything in pure mathematical functions style. 
+Functional Programming is based on Lambda Calculus
+Variables are Immutable
+It is used in mathematical computations.
+It is needed where concurrency or parallelism is required.
+
 Stream interface which relies on a new Java component, lambda expressions.
 
 Lambda expressions make code more functional and less object-oriented, thus shortening its length.
