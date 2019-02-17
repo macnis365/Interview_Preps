@@ -1,0 +1,29 @@
+Postgres
+
+>psql postgres
+
+postgres=# CREATE ROLE me WITH LOGIN PASSWORD 'password';
+
+postgres=# ALTER ROLE me CREATEDB;
+
+>\du
+
+me          | Create DB                           | {}
+postgres    | Superuser, Create role, Create DB   | {}
+
+postgres=# \q
+
+Now we’ll connect postgres with me.
+psql -d postgres -U me
+
+Instead of postgres=#, our prompt shows postgres=> now, meaning we're no longer logged in as a superuser.
+
+Use the \list command to see the available databases.
+
+postgres=> CREATE DATABASE api;
+
+Let’s connect to the new api database with me using the \c (connect) command.
+
+Make sure not to use the backtick (`) character when creating and working with tables in PostgreSQL. 
+While backticks are allowed in MySQL, they’re not valid in PostgreSQL. 
+Also, ensure you do not have a trailing comma in the CREATE TABLE command.
