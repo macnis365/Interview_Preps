@@ -1,0 +1,53 @@
+Connecting to the database from Node.js
+
+A popular option for production pooling would be to use pgBouncer, a lightweight connection pooler for PostgreSQL.
+
+Creating routes
+We’re going to create six functions for six routes, seen in the chart below. 
+First, we’ll go through and create all of the functions for each route, then we’ll export the functions so they’re accessible:
+
+GET => / | displayHome()
+GET => /users | getUsers()
+GET => /users/:id | getUserById()
+POST => users | createUser()
+PUT => /users/:id | updateUser()
+DELETE => /users/:id | deleteUser()
+
+In index.js, we made an app.get() for the root endpoint with a function in it. Now in queries.js, 
+we'll create endpoints that will display all users, display a single user, create a new user, update an existing user, and delete a user.
+
+
+Export
+In order to access these functions from index.js, we’ll need to export them. We can do this with module.exports, 
+creating an object of functions. Since we’re using ES6 syntax, we can write getUsers instead of getUsers:getUsers, and so on.(under queries.js)
+module.exports = {
+  getUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
+}
+
+To get all the exported functions from queries.js, we’ll require the file and assign it to a variable.
+const db = require('./queries')
+
+
+Testing api
+
+POST
+Add a new user with the name Elaine and email elaine@example.com.
+
+curl --data "name=Elaine&email=elaine@example.com" 
+http://localhost:3000/users
+
+PUT
+Update the user with id 1 to have the name Kramer and email kramer@example.com.
+
+curl -X PUT -d "name=Kramer" -d "email=kramer@example.com" 
+http://localhost:3000/users/1
+
+DELETE
+Delete the user with id 1
+
+curl -X "DELETE" http://localhost:3000/users/1
+
