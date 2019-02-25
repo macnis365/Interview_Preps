@@ -141,7 +141,7 @@
 	Online repository for Node.js packages
 	Command line utility for installing packages, version management and dependency management of Node.js packages
 	
-12. 14. What is the difference between Node.js and Ajax?
+12. What is the difference between Node.js and Ajax?
 
 	Node.js and Ajax (Asynchronous JavaScript and XML) are the advanced implementation of JavaScript. They all serve completely different purposes.  
 
