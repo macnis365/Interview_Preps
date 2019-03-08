@@ -4,8 +4,7 @@ It implements core and optional functionality as a set of TypeScript libraries t
 
 The basic building blocks of an Angular application are NgModules, which provide a compilation context for components.
 
-An app always has at least a root module that enables bootstrapping, and typically has many more feature modules.p 
-always has at least a root module that enables bootstrapping, and typically has many more feature modules.
+An app always has at least a root module that enables bootstrapping, and typically has many more feature modules.
 
 Components define views, which are sets of screen elements that Angular can choose among and modify according to your 
 program logic and data.
