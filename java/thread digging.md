@@ -1,5 +1,6 @@
 1.	Volatile in java?
-
+        
+        The keyword 'volatile' guarantees that when you write a value to a member variable, all threads will see the new value of the variable after the write
         1)the volatile keyword in Java is used as an indicator to Java compiler and Thread that do not cache value of this variable and always read it from main memory.
         2)So what happens? Each thread has its own stack, and so its own copy of variables it can access. When the thread is created, it copies the value of all accessible variables in its own memory.
         The volatile keyword is used to say to the jvm "Warning, this variable may be modified in an other Thread". Without this keyword the JVM is free to make some optimizations,
