@@ -64,3 +64,7 @@ List result = names.stream().filter(s->s.startsWith("S")).collect(Collectors.toL
 sorted: The sorted method is used to sort the stream.
 List names = Arrays.asList("Reflection","Collection","Stream");
 List result = names.stream().sorted().collect(Collectors.toList());
+
+Exception
+	
+	Often, you don't want a method to throw an exception that is specific to how the method is implemented; callers of the method should not need to be aware of the implementation of the method; But you do want to provide error information, so you wrap the implementation-specific exception in a more general exception with the original exception as the cause
