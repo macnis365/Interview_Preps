@@ -13,8 +13,9 @@ Components use services, which provide specific functionality not directly relat
 Service providers can be injected into components as dependencies, making your code modular, reusable, and efficient.
 
 Templates, directives, and data binding
-A template combines HTML with Angular markup that can modify HTML elements before they are displayed
-Template directives provide program logic, and binding markup connects your application data and the DOM
+    
+    A template combines HTML with Angular markup that can modify HTML elements before they are displayed.
+    Template directives provide program logic, and binding markup connects your application data and the DOM
 
 Event binding lets your app respond to user input in the target environment by updating your application data.
 Property binding lets you interpolate values that are computed from your application data into the HTML.
