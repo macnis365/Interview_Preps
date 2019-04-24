@@ -4,10 +4,10 @@ Decorators are a core concept when developing with Angular
 
 # Angular Decorators
 
-  Class decorators, e.g. @Component and @NgModule
-  Property decorators for properties inside classes, e.g. @Input and @Output
-  Method decorators for methods inside classes, e.g. @HostListener
-  Parameter decorators for parameters inside class constructors, e.g. @Inject
+  Class decorators, e.g. @Component and @NgModule 
+  Property decorators for properties inside classes, e.g. @Input and @Output  
+  Method decorators for methods inside classes, e.g. @HostListener  
+  Parameter decorators for parameters inside class constructors, e.g. @Inject 
 
 # Class Decorators
 Angular offers us a few class decorators. These are the top-level decorators that we use to express intent for classes. They allow us to tell Angular that a particular class is a component, or module, for example. And the decorator allows us to define this intent without having to actually put any code inside the class.
