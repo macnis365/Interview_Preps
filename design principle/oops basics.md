@@ -36,3 +36,13 @@ Polymorphism: ()
     Two types of polymorphism are Runtime and compile-time polymorphism.
         1)Run time poly - refers to a process in which a call to an overridden method is resolved at runtime rather than at compile-time.
         2)compile time poly - refers to a process in which a call to an overloaded method is resolved at compile time rather than at run time
+
+Association is relation between two separate classes which establishes through their Objects.
+
+	Aggregation
+	It represents Has-A relationship.
+	both the entries can survive individually which means ending one entity will not effect the other entity
+
+	Composition is a restricted form of Aggregation in which two entities are highly dependent on each other.
+	It represents part-of relationship.
+	In composition, both the entities are dependent on each other.
