@@ -52,3 +52,8 @@
         1)	An object is considered immutable if its state cannot change after it is constructed.
         2)	Steps to make any class immutable, first make class final, make all the class fields private final, never provide setter methods to set the class fields,
         If an instance field includes mutable reference, create copies of your internal mutable objects and return this object instead original.
+
+9. Generic Vs Inheritence
+        
+        I think you should use generics when you want only the same functionality applied to various types (Add, Remove, Count) and it will be implemented the same way. 
+        Inheritance is when you need the same functionality (GetResponse) but want it to be implemented different ways.
