@@ -41,3 +41,36 @@ User stories -
 	
 	are short, simple descriptions of a feature told from the perspective of the person who desires the new capability, 
   usually a user or customer of the system.
+  
+Agile SD
+	self organising and cross platform team
+
+Agile manifesto
+	Responding to change over following plan
+
+Scrum
+	Agile frame work
+	team of 3 to 9 embers
+
+Springs
+	2 to 4 week
+
+Daily scrum 
+
+Scrum Values
+	Focus
+	Openness
+	Respect
+
+Agile Roles
+	Product owner - defines user story, backlog and priorities
+	Development team - delivery
+	Scrum master - accountable for moving impendements, not a team lead or PO.ensure scrum framework is followed
+
+Scrum Events
+	Sprint
+	Sprint planning
+	Daily scrum
+	Sprint review (demo)
+	Retrospective
+
