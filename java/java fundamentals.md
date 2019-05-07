@@ -57,3 +57,6 @@
         
         I think you should use generics when you want only the same functionality applied to various types (Add, Remove, Count) and it will be implemented the same way. 
         Inheritance is when you need the same functionality (GetResponse) but want it to be implemented different ways.
+        
+        Use generics when you want to create a "template" that can apply to many styles of unknown classes. Eg. Collections holding ??? are good candidates for generics. 
+        Inheritance is for when you have a base conecpt that children "are" an extension of that concept.
