@@ -16,3 +16,12 @@ OAuth2.0 - The goal remains always the same: to obtain an access_token and use i
 This project is based on the api Java stack, which intensively uses spring-boot and spring-cloud frameworks which means it is highly opinionated.
 
 Under the hood, components from the Netflix OSS stack are used, Ribbon for client side load balancing Hystrix as a circuit breaker, Feign as an http client ...etc.and Consul.io for service discovery.
+
+
+Open Banking API
+
+  Subscribe to one or more digital products, each of which is a set of APIs grouped based on the consumption need of the third-party developer
+
+  Obtain app credentials that include a client ID and secret for each app
+
+  Use the app credentials to authenticate
