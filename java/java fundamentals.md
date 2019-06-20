@@ -60,3 +60,9 @@
         
         Use generics when you want to create a "template" that can apply to many styles of unknown classes. Eg. Collections holding ??? are good candidates for generics. 
         Inheritance is for when you have a base conecpt that children "are" an extension of that concept.
+
+10. String Pool and new() String
+        
+        String pool helps in saving a lot of space for Java Runtime although it takes more time to create the String.
+        However using new operator, we force String class to create a new String object in heap space. 
+        We can use intern() method to put it into the pool or refer to another String object from the string pool having the same value.
